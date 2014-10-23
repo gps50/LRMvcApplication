@@ -1,0 +1,38 @@
+﻿@model LRMvcApplication.Models.CourcesModel
+
+
+<table id="cources-table" class="univer-table">
+    <tr>
+        <th>Название</th>
+        <th>Описание</th>
+    </tr>
+    @foreach(var cource in Model.Cources)
+    {
+    <tr>
+        <td>@cource.Title</td>
+        <td>@cource.Description</td>
+        <td>
+            <a href="#" data-item-id="@cource.Id" class="cource-edit ui-icon ui-icon-pencil" title="Изменить">
+                Править
+            </a>
+        </td>
+        <td>
+            <a href="#" data-item-id="@cource.Id" class="cource-delete ui-icon ui-icon-trash" title="Удалить">
+                Удалить
+            </a>
+        </td>
+    </tr>
+    }
+</table>
+
+
+<ul id="cource-pages-navigation" class="univer-paging">
+    @for (var i = 1; i <= Model.PagesCount; i++)
+    {
+        <li class="cource-pages-number">
+            <a href="@((i != Model.PageNumber) ? "#" : (string)null)">@i</a>
+        </li>
+        
+    }
+</ul>
+

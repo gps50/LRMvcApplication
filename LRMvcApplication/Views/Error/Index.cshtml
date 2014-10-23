@@ -1,0 +1,30 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Ошибка</title>
+
+    @Scripts.Render("~/bundles/js/jquery")
+    @Scripts.Render("~/bundles/js/jquery-ui")
+    
+
+    @Styles.Render("~/bundles/css/jquery-ui")
+</head>
+<body>
+    <div class="ui-widget">
+        @if(ViewBag.Http404)
+        {
+            @: Запрашиваемый ресурс не найден
+        }
+        else
+        {
+            @: Произошла ошибка
+        }
+    </div>
+</body>
+</html>

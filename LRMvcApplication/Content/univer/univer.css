@@ -1,0 +1,63 @@
+﻿body {
+}
+
+.univer-form
+{
+	margin: 0.5em;
+}
+
+.univer-table th
+{
+	background-color: #E5E5E5;
+}
+
+.univer-table th, td
+{
+	border-collapse: collapse;
+	border: 1px solid black;
+	padding: 0.2em;
+}
+
+.univer-paging
+{
+	list-style: none
+}
+
+.univer-paging li
+{
+	display: inline-block;
+}
+
+.univer-search-form
+{
+
+}
+
+/*
+	blocker:
+*/
+#blocker
+{
+	display: none;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .5;
+    background-color: #000;
+    z-index: 1000;
+    overflow: auto;
+}
+    #blocker div
+    {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 5em;
+        height: 2em;
+        margin: -1em 0 0 -2.5em;
+        color: #fff;
+        font-weight: bold;
+    }

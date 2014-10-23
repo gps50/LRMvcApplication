@@ -1,0 +1,110 @@
+﻿@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Курсы</title>
+    
+
+    <meta name="keywords" content="Курсы" />
+	<meta name="description" content="Список курсов" />
+
+    
+    @Scripts.Render("~/bundles/js/jquery")
+    @Scripts.Render("~/bundles/js/jquery-ui")
+    @Scripts.Render("~/bundles/js/univer")
+    
+
+    @Styles.Render("~/bundles/css/jquery-ui")
+    @Styles.Render("~/bundles/css/univer")
+
+
+    <script>
+        $(function () {
+            start({
+                cources: {
+                    get: '@Url.Action(MVC.Univer.CourcesList())',
+                    create: '@Url.Action(MVC.Univer.CreateCource())',
+                    update: '@Url.Action(MVC.Univer.UpdateCource())',
+                    del: '@Url.Action(MVC.Univer.DeleteCource())'
+                }
+            });
+        });
+    </script>
+
+</head>
+<body>
+
+    <div style="font-size: 0.6em" >Email: gps50gps50@gmail.com</div>
+
+    <div class="univer-cource-panel ui-widget">
+
+        <h1>
+            Курсы
+        </h1>
+    
+        <form id="search-cource-form" class="univer-search-form univer-form">
+            <label for="search" >Поиск</label>
+            <input name="search" type="text" placeholder="Поиск" />
+            <button type="submit">
+                Применить
+            </button>
+        </form>
+
+        <div id="univer-info" class="univer-form">
+        </div>
+
+        <div class="univer-form">
+            <button id="create-cource-button">
+                Создать
+            </button>
+        </div>
+
+    </div>
+    
+
+    <form id="create-cource-dialog" title="Создание">
+        <div>
+            <label for="title">Название</label>
+            <input name="title" type="text" placeholder="Название" />
+        </div>
+        <div>
+            <label for="description">Описание</label>
+            <input name="description" type="text" placeholder="Описание" />
+        </div>
+        <div>
+            <button type="submit">
+                Сохранить
+            </button>
+        </div>
+    </form>
+
+
+    <form id="update-cource-dialog" title="Изменение">
+        <input name="id" type="hidden" />
+        <div>
+            <label for="title">Название</label>
+            <input name="title" type="text" placeholder="Название" />
+        </div>
+        <div>
+            <label for="description">Описание</label>
+            <input name="description" type="text" placeholder="Описание" />
+        </div>
+        <div>
+            <button type="submit">
+                Сохранить
+            </button>
+        </div>
+    </form>
+
+    <div id="blocker">
+        <div>Загрузка</div>
+    </div>
+
+</body>
+</html>
